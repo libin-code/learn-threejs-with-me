@@ -1,15 +1,28 @@
 # 💡 LEARN THREE.JS WITH ME - LIGHTS
 
-A brief description of what this project does and who it's for
+This repo is stored the demo code for the "light" section of my article "Learn three.js with me". You can follow with me in the article.
+Feel free to clone the code and do whatever you want.
 
 
 ## Installation
 
-Install my-project with npm
+1. Clone the repo and move into the direction:
 
-```bash
-  npm install my-project
-  cd my-project
+```sh
+git clone https://github.com/libin-code/learn-threejs-with-me &&
+cd learn-threejs-with-me/code/chap_7
+```
+
+2. Install packages:
+
+```sh
+npm install
+```
+
+3. Start project:
+
+```sh
+npm run dev
 ```
     
 ## Screenshots
