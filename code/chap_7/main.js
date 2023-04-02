@@ -1,5 +1,6 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+import { RectAreaLightHelper } from "three/addons/helpers/RectAreaLightHelper.js";
 import "./style.css";
 
 const CANVAS = document.querySelector("#webgl");
@@ -36,11 +37,22 @@ scene.add(ambientLight);
 //   0.2
 // );
 // scene.add(hemisphereLightHelper);
-const pointLight = new THREE.PointLight("red", 0.5, 5, 1);
-pointLight.position.set(0.3, 0.4, 1);
-scene.add(pointLight);
-const pointLightHelper = new THREE.PointLightHelper(pointLight, 0.2);
-scene.add(pointLightHelper);
+// const pointLight = new THREE.PointLight("red", 0.5, 5, 1);
+// pointLight.position.set(0.3, 0.4, 1);
+// scene.add(pointLight);
+// const pointLightHelper = new THREE.PointLightHelper(pointLight, 0.2);
+// scene.add(pointLightHelper);
+const rectAreaLight = new THREE.RectAreaLight(
+  new THREE.Color("blue"),
+  5,
+  1.75,
+  2
+);
+rectAreaLight.position.set(-0.5, 0.5, -1.5);
+rectAreaLight.lookAt(cube.position);
+scene.add(rectAreaLight);
+const rectAreaLightHelper = new RectAreaLightHelper(rectAreaLight);
+scene.add(rectAreaLightHelper);
 
 // Camera
 const camera = new THREE.PerspectiveCamera(
