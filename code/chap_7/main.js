@@ -16,6 +16,10 @@ const material = new THREE.MeshStandardMaterial({ color: "#e3bd56" });
 const cube = new THREE.Mesh(geometry, material);
 scene.add(cube);
 
+// Lights
+const ambientLight = new THREE.AmbientLight("white", 0.5);
+scene.add(ambientLight);
+
 // Camera
 const camera = new THREE.PerspectiveCamera(
   75,
