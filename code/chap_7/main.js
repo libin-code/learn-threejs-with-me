@@ -53,6 +53,11 @@ rectAreaLight.lookAt(cube.position);
 scene.add(rectAreaLight);
 const rectAreaLightHelper = new RectAreaLightHelper(rectAreaLight);
 scene.add(rectAreaLightHelper);
+const spotLight = new THREE.SpotLight("red", 5, 4, Math.PI * 0.1, 0.25, 2);
+spotLight.position.set(0, 1.5, 2);
+scene.add(spotLight);
+const spotLightHelper = new THREE.SpotLightHelper(spotLight);
+scene.add(spotLightHelper);
 
 // Camera
 const camera = new THREE.PerspectiveCamera(
