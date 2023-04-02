@@ -17,8 +17,11 @@ const cube = new THREE.Mesh(geometry, material);
 scene.add(cube);
 
 // Lights
-const ambientLight = new THREE.AmbientLight("white", 0.5);
+const ambientLight = new THREE.AmbientLight("white", 0.3);
 scene.add(ambientLight);
+const directionalLight = new THREE.DirectionalLight("white", 1);
+directionalLight.position.set(0.45, 0, 1);
+scene.add(directionalLight);
 
 // Camera
 const camera = new THREE.PerspectiveCamera(
