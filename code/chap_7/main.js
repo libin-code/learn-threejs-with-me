@@ -20,22 +20,27 @@ scene.add(cube);
 // Lights
 const ambientLight = new THREE.AmbientLight("white", 0.3);
 scene.add(ambientLight);
-const directionalLight = new THREE.DirectionalLight("white", 1);
-directionalLight.position.set(0.45, 0, 1);
-scene.add(directionalLight);
+// const directionalLight = new THREE.DirectionalLight("white", 1);
+// directionalLight.position.set(0.45, 0, 1);
+// scene.add(directionalLight);
 // const directionalLightHelper = new THREE.DirectionalLightHelper(
 //   directionalLight,
 //   1,
 //   new THREE.Color("red")
 // );
 // scene.add(directionalLightHelper);
-const hemisphereLight = new THREE.HemisphereLight("blue", "red", 0.8);
-scene.add(hemisphereLight);
-const hemisphereLightHelper = new THREE.HemisphereLightHelper(
-  hemisphereLight,
-  0.2
-);
-scene.add(hemisphereLightHelper);
+// const hemisphereLight = new THREE.HemisphereLight("blue", "red", 0.8);
+// scene.add(hemisphereLight);
+// const hemisphereLightHelper = new THREE.HemisphereLightHelper(
+//   hemisphereLight,
+//   0.2
+// );
+// scene.add(hemisphereLightHelper);
+const pointLight = new THREE.PointLight("red", 0.5, 5, 1);
+pointLight.position.set(0.3, 0.4, 1);
+scene.add(pointLight);
+const pointLightHelper = new THREE.PointLightHelper(pointLight, 0.2);
+scene.add(pointLightHelper);
 
 // Camera
 const camera = new THREE.PerspectiveCamera(
