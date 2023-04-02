@@ -22,6 +22,12 @@ scene.add(ambientLight);
 const directionalLight = new THREE.DirectionalLight("white", 1);
 directionalLight.position.set(0.45, 0, 1);
 scene.add(directionalLight);
+const directionalLightHelper = new THREE.DirectionalLightHelper(
+  directionalLight,
+  1,
+  new THREE.Color("red")
+);
+scene.add(directionalLightHelper);
 
 // Camera
 const camera = new THREE.PerspectiveCamera(
