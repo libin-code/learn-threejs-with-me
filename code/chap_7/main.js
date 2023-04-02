@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import "./style.css";
 
 const CANVAS = document.querySelector("#webgl");
@@ -37,6 +38,8 @@ const camera = new THREE.PerspectiveCamera(
   1000
 );
 camera.position.z = 3;
+
+const control = new OrbitControls(camera, CANVAS);
 
 // Renderer
 const renderer = new THREE.WebGLRenderer({ canvas: CANVAS });
