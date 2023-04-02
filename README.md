@@ -49,7 +49,7 @@ Here are some related projects:
 
 - **MIT**
 
-## ☕️ 请我喝咖啡
+## ☕️ SUPPORT
 
 If you enjoy my posts and feel they are worth paying for, you can show your appreciation by buying me a coffee. It will make my day!
 
