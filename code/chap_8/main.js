@@ -17,12 +17,14 @@ const material = new THREE.MeshStandardMaterial({ color: "white" });
 // - plane
 const plane = new THREE.Mesh(new THREE.PlaneGeometry(6, 3), material);
 plane.rotation.x = -Math.PI * 0.5;
+plane.receiveShadow = true;
 scene.add(plane);
 
 // - wall
 const wall = new THREE.Mesh(new THREE.PlaneGeometry(6, 2), material);
 wall.position.y = 1;
 wall.position.z = -1.5;
+wall.receiveShadow = true;
 scene.add(wall);
 
 // - cube
@@ -32,6 +34,7 @@ const cube = new THREE.Mesh(
 );
 cube.position.x = -1.5;
 cube.material.color.set("#4da2cc");
+cube.castShadow = true;
 scene.add(cube);
 
 // - sphere
@@ -41,6 +44,7 @@ const sphere = new THREE.Mesh(
 );
 sphere.position.x = 1.5;
 sphere.material.color.set("#a1b99d");
+sphere.castShadow = true;
 scene.add(sphere);
 
 // - torusKnot
@@ -49,6 +53,7 @@ const torusKnot = new THREE.Mesh(
   material.clone()
 );
 torusKnot.material.color.set("#e3bd56");
+torusKnot.castShadow = true;
 scene.add(torusKnot);
 
 const objectGroup = new THREE.Group();
@@ -83,6 +88,7 @@ const controls = new OrbitControls(camera, CANVAS);
 const pointLight = new THREE.PointLight(0xffffff);
 pointLight.intensity = 0.6;
 pointLight.position.set(2, 3, 2);
+pointLight.castShadow = true;
 scene.add(pointLight);
 const pointLightHelper = new THREE.PointLightHelper(pointLight, 0.2);
 scene.add(pointLightHelper);
@@ -93,6 +99,7 @@ scene.add(ambientLight);
 // Renderer
 const renderer = new THREE.WebGLRenderer({ canvas: CANVAS });
 renderer.setSize(CANVAS_SIZE.width, CANVAS_SIZE.height);
+renderer.shadowMap.enabled = true;
 renderer.antialias = true;
 
 // Animation
