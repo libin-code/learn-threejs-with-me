@@ -89,12 +89,23 @@ const pointLight = new THREE.PointLight(0xffffff);
 pointLight.intensity = 0.6;
 pointLight.position.set(2, 3, 2);
 pointLight.castShadow = true;
+pointLight.shadow.mapSize.set(1024, 1024);
+pointLight.shadow.radius = 5;
+pointLight.shadow.camera.near = 1;
+pointLight.shadow.camera.far = 7;
+pointLight.shadow.camera.top = 2;
+pointLight.shadow.camera.bottom = -2;
+pointLight.shadow.camera.left = -2;
+pointLight.shadow.camera.right = 2;
 scene.add(pointLight);
 const pointLightHelper = new THREE.PointLightHelper(pointLight, 0.2);
 scene.add(pointLightHelper);
 const ambientLight = new THREE.AmbientLight(0xffffff);
 ambientLight.intensity = 0.3;
 scene.add(ambientLight);
+
+// const cameraHelper = new THREE.CameraHelper(pointLight.shadow.camera);
+// scene.add(cameraHelper);
 
 // Renderer
 const renderer = new THREE.WebGLRenderer({ canvas: CANVAS });
