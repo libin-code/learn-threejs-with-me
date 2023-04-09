@@ -35,6 +35,7 @@ const cube = new THREE.Mesh(
 cube.position.x = -1.5;
 cube.material.color.set("#4da2cc");
 cube.castShadow = true;
+cube.receiveShadow = true;
 scene.add(cube);
 
 // - sphere
@@ -45,6 +46,7 @@ const sphere = new THREE.Mesh(
 sphere.position.x = 1.5;
 sphere.material.color.set("#a1b99d");
 sphere.castShadow = true;
+sphere.receiveShadow = true;
 scene.add(sphere);
 
 // - torusKnot
@@ -54,6 +56,7 @@ const torusKnot = new THREE.Mesh(
 );
 torusKnot.material.color.set("#e3bd56");
 torusKnot.castShadow = true;
+torusKnot.receiveShadow = true;
 scene.add(torusKnot);
 
 const objectGroup = new THREE.Group();
@@ -112,6 +115,7 @@ const renderer = new THREE.WebGLRenderer({ canvas: CANVAS });
 renderer.setSize(CANVAS_SIZE.width, CANVAS_SIZE.height);
 renderer.shadowMap.enabled = true;
 renderer.antialias = true;
+renderer.shadowMap.type = THREE.VSMShadowMap;
 
 // Animation
 const animate = function () {
